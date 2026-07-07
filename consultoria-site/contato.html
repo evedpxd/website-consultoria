@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entre em contato com a consultoria empresarial." />
+
+ <!-- LOGO DA ABA DO NAVEGADOR -->
+  <link rel="icon" type="image/png" href="assets/favicon.jpg">
+
+  <title>Contato | Premium Consultoria Empresarial</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================
+       CABEÇALHO DO SITE
+  ========================= -->
+  <header class="header" id="topo">
+    <div class="container header__content">
+      <a href="index.html#inicio" class="brand" aria-label="Voltar para o início">
+        <!-- AQUI VOCÊ SUBSTITUI assets/logo.png PELA SUA LOGO -->
+        <img src="assets/logo.png" alt="Logo da empresa" class="brand__logo" />
+        <span class="brand__text">
+          <!-- AQUI VOCÊ ALTERA O NOME DA EMPRESA -->
+          <strong>Premium Consultoria</strong>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="main-menu" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html#inicio">INÍCIO</a></li>
+          <li><a class="nav__link" href="index.html#sobre">SOBRE</a></li>
+          <li><a class="nav__link" href="index.html#servicos">SERVIÇOS</a></li>
+          <li><a class="nav__link" href="metodos.html">MÉTODOS</a></li>
+          <li><a class="nav__link is-current" href="contato.html">CONTATO</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn btn--primary header__button js-whatsapp" target="_blank" rel="noopener">
+        FALAR COM ESPECIALISTA
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         SEÇÃO INICIAL / HERO
+    ========================= -->
+    <section class="page-hero section">
+      <div class="container page-hero__content reveal">
+        <span class="eyebrow">CONTATO</span>
+        <!-- AQUI VOCÊ ALTERA O TÍTULO DA PÁGINA CONTATO -->
+        <h1>Vamos conversar sobre sua empresa?</h1>
+        <!-- AQUI VOCÊ ALTERA O TEXTO DA PÁGINA CONTATO -->
+        <p>Preencha o formulário ou escolha uma das opções de contato direto.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         PÁGINA CONTATO
+    ========================= -->
+    <section class="contact section">
+      <div class="container contact__grid">
+        <div class="contact__form-area reveal">
+          <h2>Envie sua mensagem</h2>
+          <p>O formulário abrirá o WhatsApp com uma mensagem pronta contendo seus dados.</p>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <!-- AQUI VOCÊ ALTERA O CAMPO NOME, SE PRECISAR -->
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required />
+            </div>
+
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 90000-0000" required />
+            </div>
+
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <input type="text" id="assunto" name="assunto" placeholder="Sobre o que deseja falar?" required />
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">Enviar pelo WhatsApp</button>
+          </form>
+        </div>
+
+        <aside class="contact__info reveal">
+          <h2>Fale diretamente conosco</h2>
+          <p>Escolha o canal mais prático para entrar em contato com nossa equipe.</p>
+
+          <div class="contact-cards">
+            <!-- DADOS DE CONTATO -->
+            <div class="contact-card">
+              <strong>Telefone</strong>
+              <span>(00) 0000-0000</span>
+            </div>
+
+            <div class="contact-card">
+              <strong>WhatsApp</strong>
+              <span>(83) 9 9198-8187</span>
+            </div>
+
+            <div class="contact-card">
+              <strong>E-mail</strong>
+              <a href="mailto:contato@suaempresa.com.br">contato@suaempresa.com.br</a>
+            </div>
+
+            <div class="contact-card">
+              <strong>Endereço</strong>
+              <span>Sua cidade - Seu estado</span>
+            </div>
+
+            <div class="contact-card">
+              <strong>Horário de atendimento</strong>
+              <span>Segunda a sexta, das 08h às 18h</span>
+            </div>
+          </div>
+
+          <div class="contact__buttons">
+            <a href="#" class="btn btn--primary js-whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a href="mailto:contato@suaempresa.com.br" class="btn btn--secondary">Enviar e-mail</a>
+            <a href="#" class="btn btn--secondary js-whatsapp" target="_blank" rel="noopener">Agendar reunião</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       RODAPÉ
+  ========================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__brand">
+        <img src="assets/logo.png" alt="Logo da empresa" />
+        <h3>Nome da Empresa</h3>
+        <p>Estratégia, gestão e soluções para empresas que querem crescer.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Links rápidos</h4>
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="metodos.html">Métodos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Serviços</h4>
+        <a href="index.html#servicos">Consultoria Estratégica</a>
+        <a href="index.html#servicos">Diagnóstico Empresarial</a>
+        <a href="index.html#servicos">Planejamento Financeiro</a>
+        <a href="index.html#servicos">Estruturação de Processos</a>
+        <a href="index.html#servicos">Gestão Comercial</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <p>Telefone: (83) 9 9198-8187</p>
+        <p>WhatsApp: (83) 9 9198-8187</p>
+        <p>E-mail: contato@suaempresa.com.br</p>
+        <p>Endereço: Sua cidade - Seu estado</p>
+        <p>Horário: Segunda a sexta, das 08h às 18h</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Redes sociais</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+        <a href="#" class="js-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2026 Nome da Empresa. Todos os direitos reservados.</p>
+      <div>
+        <a href="#">Política de Privacidade</a>
+        <span>|</span>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

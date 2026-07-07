@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Consultoria empresarial para organizar processos, melhorar resultados e crescer com estratégia." />
+
+ <!-- LOGO DA ABA DO NAVEGADOR -->
+  <link rel="icon" type="image/png" href="assets/favicon.jpg">
+
+  <title>Premium Consultoria Empresarial</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AQUI O SITE CARREGA O ARQUIVO CSS PRINCIPAL -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================
+       CABEÇALHO DO SITE
+  ========================= -->
+  <header class="header" id="topo">
+    <div class="container header__content">
+      <a href="index.html#inicio" class="brand" aria-label="Voltar para o início">
+        <!-- AQUI VOCÊ SUBSTITUI assets/logo.png PELA SUA LOGO -->
+        <img src="assets/logo.png" alt="Logo da empresa" class="brand__logo" />
+
+        <span class="brand__text">
+          <!-- NOME DA EMPRESA -->
+          <strong>Premium Consultoria</strong>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="main-menu" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a class="nav__link is-current" href="index.html#inicio">INÍCIO</a></li>
+          <li><a class="nav__link" href="index.html#sobre">SOBRE</a></li>
+          <li><a class="nav__link" href="index.html#servicos">SERVIÇOS</a></li>
+          <li><a class="nav__link" href="metodos.html">MÉTODOS</a></li>
+          <li><a class="nav__link" href="contato.html">CONTATO</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn btn--primary header__button js-whatsapp" target="_blank" rel="noopener">
+        FALAR COM ESPECIALISTA
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         SEÇÃO INICIAL / HERO
+    ========================= -->
+    <section class="hero section" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+
+          <!-- ATEXTO PRINCIPAL DA PÁGINA -->
+          <h1>Vamos conversar sobre o futuro da sua empresa.</h1>
+
+          <!-- DESCRIÇÃO DO HERO -->
+          <p>
+            Ajudamos empresas a organizar processos, melhorar resultados e crescer com estratégia,
+            planejamento e gestão eficiente.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary js-whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a href="#servicos" class="btn btn--secondary">Conhecer serviços</a>
+          </div>
+        </div>
+
+        <div class="hero__image-wrap reveal">
+          <img src="assets/hero.jpg" alt="Imagem principal da empresa" class="hero__image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO SOBRE
+         Textos sobre a empresa e imagens do carrossel
+    ========================= -->
+    <section class="about section" id="sobre">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">SOBRE A EMPRESA</span>
+          <h2>Estratégia, gestão e soluções para empresas que querem crescer.</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <!-- TEXTO SOBRE A EMPRESA -->
+            <p>
+              Somos uma consultoria empresarial focada em ajudar empresas a tomarem decisões mais
+              claras, estruturarem processos e criarem planos de crescimento consistentes. Nosso
+              trabalho une análise, estratégia e acompanhamento prático para transformar ideias em
+              ações reais.
+            </p>
+            <p>
+              Atuamos ao lado de empreendedores, gestores e equipes para entender a realidade do
+              negócio, identificar oportunidades e construir soluções alinhadas aos objetivos da empresa.
+            </p>
+          </div>
+
+          <div class="carousel reveal" aria-label="Carrossel sobre a empresa">
+            <div class="carousel__viewport">
+              <!-- IMAGENS E TEXTOS DOS SLIDES -->
+              <div class="carousel__slide is-active">
+                <img src="assets/sobre1.jpg" alt="Análise empresarial e diagnóstico" />
+                <p>Analisamos o cenário atual da sua empresa para identificar gargalos, oportunidades e pontos de melhoria.</p>
+              </div>
+
+              <div class="carousel__slide">
+                <img src="assets/sobre2.jpg" alt="Planejamento estratégico empresarial" />
+                <p>Criamos estratégias personalizadas para melhorar a gestão, os processos e os resultados do negócio.</p>
+              </div>
+
+              <div class="carousel__slide">
+                <img src="assets/sobre3.jpg" alt="Acompanhamento de crescimento empresarial" />
+                <p>Acompanhamos a evolução da empresa com foco em crescimento sustentável e tomada de decisão inteligente.</p>
+              </div>
+            </div>
+
+            <div class="carousel__controls">
+              <button class="carousel__button" type="button" data-carousel-prev aria-label="Slide anterior">‹</button>
+              <div class="carousel__dots" aria-label="Indicadores do carrossel">
+                <button class="carousel__dot is-active" type="button" data-carousel-dot="0" aria-label="Ir para slide 1"></button>
+                <button class="carousel__dot" type="button" data-carousel-dot="1" aria-label="Ir para slide 2"></button>
+                <button class="carousel__dot" type="button" data-carousel-dot="2" aria-label="Ir para slide 3"></button>
+              </div>
+              <button class="carousel__button" type="button" data-carousel-next aria-label="Próximo slide">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SEÇÃO SERVIÇOS
+         Cards, títulos, descrições e ícones dos serviços :P
+    ========================= -->
+    <section class="services section" id="servicos">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <span class="eyebrow">NOSSOS SERVIÇOS</span>
+          <h2>Soluções pensadas para cada etapa do seu negócio.</h2>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <!-- AQUI VOCÊ TROCA O ÍCONE DO CARD -->
+            <span class="service-card__icon">▣</span>
+            <h3>Consultoria Estratégica</h3>
+            <p>Planejamento para posicionar sua empresa com mais clareza e competitividade.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__icon">◈</span>
+            <h3>Diagnóstico Empresarial</h3>
+            <p>Análise completa dos pontos fortes, desafios e oportunidades do negócio.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__icon">◍</span>
+            <h3>Planejamento Financeiro</h3>
+            <p>Organização financeira para melhorar controle, previsibilidade e resultados.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__icon">◎</span>
+            <h3>Estruturação de Processos</h3>
+            <p>Criação e melhoria de processos internos para aumentar a eficiência.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__icon">◇</span>
+            <h3>Gestão Comercial</h3>
+            <p>Estratégias para melhorar vendas, atendimento e relacionamento com clientes.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-card__icon">◐</span>
+            <h3>Acompanhamento de Crescimento</h3>
+            <p>Suporte contínuo para evolução da empresa com decisões baseadas em dados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CHAMADA PARA AÇÃO
+         Texto final e botão de contato
+    ========================= -->
+    <section class="cta section reveal">
+      <div class="container cta__box">
+        <!-- AQUI VOCÊ ALTERA A CHAMADA FINAL -->
+        <h2>Pronto para transformar a gestão da sua empresa?</h2>
+        <p>
+          Entre em contato e descubra como podemos ajudar o seu negócio a crescer com mais
+          organização, estratégia e resultado.
+        </p>
+        <a href="#" class="btn btn--light js-whatsapp" target="_blank" rel="noopener">Falar com especialista</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       RODAPÉ
+  ========================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__brand">
+        <!-- AQUI VOCÊ SUBSTITUI assets/logo.png PELA SUA LOGO -->
+        <img src="assets/logo.png" alt="Logo da empresa" />
+        <!-- AQUI VOCÊ ALTERA O NOME DA EMPRESA -->
+        <h3>Nome da Empresa</h3>
+        <p>Estratégia, gestão e soluções para empresas que querem crescer.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Links rápidos</h4>
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="metodos.html">Métodos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Serviços</h4>
+        <a href="index.html#servicos">Consultoria Estratégica</a>
+        <a href="index.html#servicos">Diagnóstico Empresarial</a>
+        <a href="index.html#servicos">Planejamento Financeiro</a>
+        <a href="index.html#servicos">Estruturação de Processos</a>
+        <a href="index.html#servicos">Gestão Comercial</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <!-- DADOS DE CONTATO -->
+        <p>Telefone: (00) 0000-0000</p>
+        <p>WhatsApp: (00) 90000-0000</p>
+        <p>E-mail: contato@suaempresa.com.br</p>
+        <p>Endereço: Sua cidade - Seu estado</p>
+        <p>Horário: Segunda a sexta, das 08h às 18h</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Redes sociais</h4>
+        <!-- LINKS DAS REDES SOCIAIS -->
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+        <a href="#" class="js-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2026 Nome da Empresa. Todos os direitos reservados.</p>
+      <div>
+        <a href="#">Política de Privacidade</a>
+        <span>|</span>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARQUIVO JAVASCRIPT PRINCIPAL -->
+  <script src="js/script.js"></script>
+</body>
+</html>
