@@ -1,16 +1,12 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap");
 
 /* COR PRINCIPAL DO SITE */
 :root {
   --azul-principal: #0f1b33;
   --azul-profundo: #0f1b33;
-  --azul-suave: #1e3a5f;
   --dourado: #d99000;
   --dourado-hover: #d99000;
   --branco: #ffffff;
-  --azul-marinho: #1e3a5f;
-  --azul-marinho: #1e3a5f; /* cor do fundo de início */
   --texto: #ffffff;
   --texto-suave: #5c6b7a;
   --borda: rgba(7, 31, 61, 0.12);
@@ -20,6 +16,7 @@
   --raio-menor: 1rem;
   --container: 73rem;
   --header-altura: 5rem;
+  --fundo-site: #dedfe1;
 }
 
 /* =========================
@@ -39,7 +36,7 @@ html {
 body {
   overflow-x: hidden;
   min-height: 100vh;
-  background: var(--off-white);
+  background: var(--fundo-site);
   color: var(--texto);
   font-family: "Open Sans", sans-serif; /* textos e parágrafos */
   line-height: 1.6;
@@ -54,12 +51,6 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
 }
 
 button {
@@ -263,15 +254,15 @@ CABEÇALHO
 }
 
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 6px;
   min-width: 0;
 }
 
 .brand__logo {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 70px;
+  height: auto;
   object-fit: contain;
   border-radius: 0.85rem;
 }
@@ -285,7 +276,7 @@ CABEÇALHO
     font-size: 1.4rem; /* tamanho do nome */
   color: #071f3d; /* cor do nome */
   font-family: "Montserrat", sans-serif; /* fonte do nome */
-  font-weight: 800; /* grossura da letra */
+  font-weight: 700; /* grossura da letra */
   letter-spacing: -0.03em; /* espaço entre letras */
 }
 
@@ -329,10 +320,14 @@ CABEÇALHO
 .header__button {
   min-height: 2.7rem;
   padding-inline: 1rem;
+  color: #ffffff;
   font-size: 0.88rem;
+  font-weight: 600;
   white-space: nowrap;
 }
-
+.highlight {
+color:#cd9722; /*cor da palavra "futuro"*/
+}
 .menu-toggle {
   display: none;
   width: 2.75rem;
@@ -375,7 +370,7 @@ HERO
   display: flex;
   align-items: center;
   padding-top: calc(var(--header-altura) + 3rem);
-  background: linear-gradient(135deg, var(--off-white) 0%, var(--cinza-claro) 100%);
+  background: var(--fundo-site);
 }
 
 .hero__grid {
@@ -454,7 +449,7 @@ HERO
 SOBRE
 ========================= */
 .about {
-  background: var(--branco);
+  background: var(--fundo-site);
 }
 
 .about__grid {
@@ -474,7 +469,6 @@ SOBRE
   overflow: hidden;
   border: 1px solid var(--borda);
   border-radius: var(--raio);
-  background: var(--off-white);
   box-shadow: var(--sombra-suave);
 }
 
@@ -555,7 +549,6 @@ SOBRE
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 999px;
-  background: var(--cinza-medio);
   transition: width 0.25s ease, background 0.25s ease;
 }
 
@@ -568,7 +561,7 @@ SOBRE
 SERVIÇOS
 ========================= */
 .services {
-  background: var(--cinza-claro);
+  background: var(--fundo-site);
 }
 
 .services__grid {
@@ -616,7 +609,7 @@ SERVIÇOS
 CHAMADA PARA AÇÃO
 ========================= */
 .cta {
-  background: var(--branco);
+  background: var(--fundo-site);
   padding-top: 0;
 }
 
@@ -651,9 +644,7 @@ PÁGINA MÉTODOS
 .page-hero {
   padding-top: calc(var(--header-altura) + 4rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
-  background:
-    radial-gradient(circle at 20% 20%, rgba(242, 169, 0, 0.14), transparent 24rem),
-    linear-gradient(135deg, var(--off-white), var(--cinza-claro));
+  background: var(--fundo-site);
 }
 
 .page-hero__content {
@@ -677,7 +668,7 @@ PÁGINA MÉTODOS
 }
 
 .method {
-  background: var(--branco);
+  background: var(--fundo-site);
 }
 
 .method__timeline {
@@ -695,7 +686,6 @@ PÁGINA MÉTODOS
   bottom: 1rem;
   left: 2.15rem;
   width: 0.125rem;
-  background: var(--cinza-medio);
 }
 
 .method-card {
@@ -706,7 +696,6 @@ PÁGINA MÉTODOS
   padding: 1.35rem;
   border: 1px solid var(--borda);
   border-radius: var(--raio-menor);
-  background: var(--off-white);
   box-shadow: 0 0.4rem 1.4rem rgba(7, 31, 61, 0.04);
 }
 
@@ -739,7 +728,7 @@ PÁGINA MÉTODOS
 PÁGINA CONTATO
 ========================= */
 .contact {
-  background: var(--branco);
+  background: var(--fundo-site);
 }
 
 .contact__grid {
@@ -753,7 +742,6 @@ PÁGINA CONTATO
 .contact__info {
   border: 1px solid var(--borda);
   border-radius: var(--raio);
-  background: var(--off-white);
   box-shadow: var(--sombra-suave);
 }
 
@@ -1028,11 +1016,6 @@ Ajustes para telas menores
     border-radius: 0.8rem;
   }
 
-  .nav__link:hover,
-  .nav__link.is-current {
-    background: var(--cinza-claro);
-  }
-
   .nav__link::after {
     display: none;
   }
@@ -1247,31 +1230,102 @@ Ajustes para telas menores
   }
 }
 
-/* =========================
-FUNDO GERAL DO SITE
-========================= */
+/* AJUSTES FINAIS */
 
-/* COR DO FUNDO DO SITE INTEIRO */
-:root {
-  --fundo-site: #dedfe1;
+.desktop-break {
+  display: none;
 }
 
-/* Fundo geral */
-body {
-  background: var(--fundo-site);
+.hero__actions .btn--whatsapp {
+  gap: 10px;
+  background-color: #061934;
+  color: #ffffff;
+  font-weight: 600;
 }
 
-/* Fundo das seções da página inicial */
-.hero,
-.about,
-.services,
-.cta {
-  background: var(--fundo-site);
+.hero__actions .btn--whatsapp__icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  object-fit: contain;
+  transform: scale(1.8);
+  transform-origin: center;
 }
 
-/* Fundo das páginas Métodos e Contato */
-.page-hero,
-.method,
-.contact {
-  background: var(--fundo-site);
+@media (min-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+    gap: clamp(48px, 6vw, 90px);
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .hero__content h1 {
+    max-width: 680px;
+    margin-bottom: 22px;
+    font-size: clamp(46px, 4.2vw, 66px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .desktop-break {
+    display: block;
+  }
+
+  .hero__image-wrap {
+    display: flex;
+    width: 88%;
+    max-width: 520px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__image {
+    z-index: 2;
+  }
+
+  .hero__image-wrap::before {
+    top: 16px;
+    right: -16px;
+    bottom: -16px;
+    left: 16px;
+    z-index: 1;
+    border-radius: 18px;
+    background: #061934;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .about__content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about__text {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .about .section-heading {
+    margin: 0 0 28px;
+  }
+
+  .about .section-heading h2 {
+    margin-top: 0;
+  }
+
+  .about .carousel {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    align-self: start;
+  }
 }
