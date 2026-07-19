@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- AQUI O SITE CARREGA O ARQUIVO CSS PRINCIPAL -->
+  <!-- ARQUIVO CSS PRINCIPAL -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,7 +26,6 @@
   <header class="header" id="topo">
     <div class="container header__content">
       <a href="index.html#inicio" class="brand" aria-label="Voltar para o início">
-        <!-- AQUI VOCÊ SUBSTITUI assets/logo.png PELA SUA LOGO -->
         <img src="assets/logo.png" alt="Logo da empresa" class="brand__logo" />
 
         <span class="brand__text">
@@ -51,8 +50,9 @@
         </ul>
       </nav>
 
-      <a href="#" class="btn btn--primary header__button js-whatsapp" target="_blank" rel="noopener">
-        FALAR COM ESPECIALISTA
+         <a href="contato.html" class="btn btn--primary header__button">
+        FALE SOBRE SEU DESAFIO
+       </a>
       </a>
     </div>
   </header>
@@ -61,90 +61,194 @@
     <!-- =========================
          SEÇÃO INICIAL / HERO
     ========================= -->
-    <section class="hero section" id="inicio">
-      <div class="container hero__grid">
-        <div class="hero__content reveal">
+   <section class="hero section" id="inicio">
+  <div class="container hero__grid">
 
-          <!-- ATEXTO PRINCIPAL DA PÁGINA -->
-          <h1>Vamos conversar sobre o futuro da sua empresa.</h1>
+    <div class="hero__content reveal">
 
-          <!-- DESCRIÇÃO DO HERO -->
-          <p>
-            Ajudamos empresas a organizar processos, melhorar resultados e crescer com estratégia,
-            planejamento e gestão eficiente.
-          </p>
+      <span class="eyebrow hero__eyebrow">
+        CONSULTORIA EMPRESARIAL
+      </span>
 
-          <div class="hero__actions">
-            <a href="#" class="btn btn--primary js-whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
-            <a href="#servicos" class="btn btn--secondary">Conhecer serviços</a>
-          </div>
-        </div>
+      <h1>
+        Vamos conversar<br class="desktop-break">
+        sobre o <span class="highlight">futuro</span> da<br class="desktop-break">
+        sua empresa.
+      </h1>
 
-        <div class="hero__image-wrap reveal">
-          <img src="assets/hero.jpg" alt="Imagem principal da empresa" class="hero__image" />
-          </div>
-        </div>
+      <p>
+        Ajudamos empresas a organizar processos, melhorar resultados e crescer
+        com estratégia, planejamento e gestão eficiente.
+      </p>
+
+      <div class="hero__actions">
+       <a
+  href="#"
+  class="btn btn--primary btn--whatsapp js-whatsapp"
+  target="_blank"
+  rel="noopener"
+>
+  <img
+    src="assets/whatsapp.png"
+    alt=""
+    class="btn--whatsapp__icon"
+  >
+
+  <span>NOSSO WHATSAPP</span>
+</a>
+
+        <a href="#servicos" class="btn btn--secondary">
+          CONHECER SERVIÇOS
+        </a>
       </div>
-    </section>
+
+    </div>
+
+    <div class="hero__image-wrap reveal">
+      <img
+        src="assets/hero.jpg"
+        alt="Imagem principal da empresa"
+        class="hero__image"
+      />
+    </div>
+
+  </div>
+</section>
 
     <!-- =========================
          SEÇÃO SOBRE
          Textos sobre a empresa e imagens do carrossel
     ========================= -->
-    <section class="about section" id="sobre">
-      <div class="container">
+<section class="about section" id="sobre">
+  <div class="container">
+
+    <div class="about__grid">
+
+      <!-- LADO ESQUERDO -->
+      <div class="about__content">
+
         <div class="section-heading reveal">
           <span class="eyebrow">SOBRE A EMPRESA</span>
-          <h2>Estratégia, gestão e soluções para empresas que querem crescer.</h2>
+
+          <h2>
+            Estratégia, gestão e soluções para empresas que querem crescer.
+          </h2>
         </div>
 
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <!-- TEXTO SOBRE A EMPRESA -->
-            <p>
-              Somos uma consultoria empresarial focada em ajudar empresas a tomarem decisões mais
-              claras, estruturarem processos e criarem planos de crescimento consistentes. Nosso
-              trabalho une análise, estratégia e acompanhamento prático para transformar ideias em
-              ações reais.
-            </p>
-            <p>
-              Atuamos ao lado de empreendedores, gestores e equipes para entender a realidade do
-              negócio, identificar oportunidades e construir soluções alinhadas aos objetivos da empresa.
-            </p>
-          </div>
+        <div class="about__text reveal">
+          <p>
+            Somos uma consultoria empresarial focada em ajudar empresas a
+            tomarem decisões mais claras, estruturarem processos e criarem
+            planos de crescimento consistentes. Nosso trabalho une análise,
+            estratégia e acompanhamento prático para transformar ideias em
+            ações reais.
+          </p>
 
-          <div class="carousel reveal" aria-label="Carrossel sobre a empresa">
-            <div class="carousel__viewport">
-              <!-- IMAGENS E TEXTOS DOS SLIDES -->
-              <div class="carousel__slide is-active">
-                <img src="assets/sobre1.jpg" alt="Análise empresarial e diagnóstico" />
-                <p>Analisamos o cenário atual da sua empresa para identificar gargalos, oportunidades e pontos de melhoria.</p>
-              </div>
-
-              <div class="carousel__slide">
-                <img src="assets/sobre2.jpg" alt="Planejamento estratégico empresarial" />
-                <p>Criamos estratégias personalizadas para melhorar a gestão, os processos e os resultados do negócio.</p>
-              </div>
-
-              <div class="carousel__slide">
-                <img src="assets/sobre3.jpg" alt="Acompanhamento de crescimento empresarial" />
-                <p>Acompanhamos a evolução da empresa com foco em crescimento sustentável e tomada de decisão inteligente.</p>
-              </div>
-            </div>
-
-            <div class="carousel__controls">
-              <button class="carousel__button" type="button" data-carousel-prev aria-label="Slide anterior">‹</button>
-              <div class="carousel__dots" aria-label="Indicadores do carrossel">
-                <button class="carousel__dot is-active" type="button" data-carousel-dot="0" aria-label="Ir para slide 1"></button>
-                <button class="carousel__dot" type="button" data-carousel-dot="1" aria-label="Ir para slide 2"></button>
-                <button class="carousel__dot" type="button" data-carousel-dot="2" aria-label="Ir para slide 3"></button>
-              </div>
-              <button class="carousel__button" type="button" data-carousel-next aria-label="Próximo slide">›</button>
-            </div>
-          </div>
+          <p>
+            Atuamos ao lado de empreendedores, gestores e equipes para entender
+            a realidade do negócio, identificar oportunidades e construir
+            soluções alinhadas aos objetivos da empresa.
+          </p>
         </div>
+
       </div>
-    </section>
+
+      <!-- LADO DIREITO -->
+      <div class="carousel reveal" aria-label="Carrossel sobre a empresa">
+
+        <div class="carousel__viewport">
+
+          <div class="carousel__slide is-active">
+            <img
+              src="assets/sobre1.jpg"
+              alt="Análise empresarial e diagnóstico"
+            >
+
+            <p>
+              Analisamos o cenário atual da sua empresa para identificar
+              gargalos, oportunidades e pontos de melhoria.
+            </p>
+          </div>
+
+          <div class="carousel__slide">
+            <img
+              src="assets/sobre2.jpg"
+              alt="Planejamento estratégico empresarial"
+            >
+
+            <p>
+              Criamos estratégias personalizadas para melhorar a gestão,
+              os processos e os resultados do negócio.
+            </p>
+          </div>
+
+          <div class="carousel__slide">
+            <img
+              src="assets/sobre3.jpg"
+              alt="Acompanhamento de crescimento empresarial"
+            >
+
+            <p>
+              Acompanhamos a evolução da empresa com foco em crescimento
+              sustentável e tomada de decisão inteligente.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel__controls">
+
+          <button
+            class="carousel__button"
+            type="button"
+            data-carousel-prev
+            aria-label="Slide anterior"
+          >
+            ‹
+          </button>
+
+          <div class="carousel__dots" aria-label="Indicadores do carrossel">
+
+            <button
+              class="carousel__dot is-active"
+              type="button"
+              data-carousel-dot="0"
+              aria-label="Ir para slide 1"
+            ></button>
+
+            <button
+              class="carousel__dot"
+              type="button"
+              data-carousel-dot="1"
+              aria-label="Ir para slide 2"
+            ></button>
+
+            <button
+              class="carousel__dot"
+              type="button"
+              data-carousel-dot="2"
+              aria-label="Ir para slide 3"
+            ></button>
+
+          </div>
+
+          <button
+            class="carousel__button"
+            type="button"
+            data-carousel-next
+            aria-label="Próximo slide"
+          >
+            ›
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- =========================
          SEÇÃO SERVIÇOS
