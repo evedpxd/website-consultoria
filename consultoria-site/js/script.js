@@ -321,4 +321,5 @@ if ("IntersectionObserver" in window) {
   window.addEventListener("load", atualizarMenuAoRolar);
 
   atualizarMenuAoRolar();
+
 })();
