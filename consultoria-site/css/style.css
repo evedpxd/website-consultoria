@@ -375,7 +375,6 @@ HERO
 
 .hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.98fr);
   align-items: center;
   gap: clamp(2.2rem, 6vw, 5rem);
 }
@@ -587,17 +586,17 @@ SERVIÇOS
 }
 
 .service-card__icon {
-  width: 3rem;
-  height: 3rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  width: 52px;
+  height: 52px;
   margin-bottom: 1.2rem;
-  border-radius: 1rem;
-  background: rgba(242, 169, 0, 0.14);
-  color: var(--dourado-hover);
-  font-size: 1.3rem;
-  font-weight: 800;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .service-card h3 {
@@ -609,8 +608,10 @@ SERVIÇOS
 CHAMADA PARA AÇÃO
 ========================= */
 .cta {
-  background: var(--fundo-site);
-  padding-top: 0;
+  background: #dedfe1;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
 }
 
 .cta__box {
@@ -642,29 +643,41 @@ CHAMADA PARA AÇÃO
 PÁGINA MÉTODOS
 ========================= */
 .page-hero {
-  padding-top: calc(var(--header-altura) + 4rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: calc(var(--header-altura) + 2rem);
+  padding-bottom: 1.5rem;
   background: var(--fundo-site);
 }
 
 .page-hero__content {
-  max-width: 54rem;
-  text-align: center;
+  max-width: 46rem;
   margin-inline: auto;
+  text-align: center;
 }
 
 .page-hero__content .eyebrow {
-  margin-bottom: 1rem;
+  margin-bottom: 0.55rem;
 }
 
 .page-hero__content .eyebrow::before {
   display: none;
 }
 
+.page-hero__content h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
 .page-hero__content p {
-  max-width: 43rem;
-  margin: 1.15rem auto 0;
+  max-width: 40rem;
+  margin: 0.7rem auto 0;
   font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
+
+.page-hero + .method,
+.page-hero + .contact {
+  padding-top: 1.5rem;
 }
 
 .method {
@@ -798,10 +811,43 @@ PÁGINA CONTATO
   border: 1px solid var(--borda);
   border-radius: 0.9rem;
   background: var(--branco);
-  color: var(--texto);
+
+  /* Cor do texto digitado */
+  color: var(--azul-principal);
+
   outline: 0;
   padding: 0.9rem 1rem;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  opacity: 1;
+  -webkit-text-fill-color: var(--azul-principal);
+
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #7a8794;
+  opacity: 1;
+  -webkit-text-fill-color: #7a8794;
+}
+
+
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--azul-principal) !important;
+  box-shadow: 0 0 0 1000px var(--branco) inset !important;
+  caret-color: var(--azul-principal);
+}
+
+.form-group input,
+.form-group textarea {
+  caret-color: var(--azul-principal);
 }
 
 .form-group textarea {
@@ -884,11 +930,12 @@ RODAPÉ
   gap: 0.55rem;
 }
 
-.footer__brand img {
-  width: 3.1rem;
-  height: 3.1rem;
+.logo-rodape {
+  width: 80px !important;
+  max-width: 80px !important;
+  height: auto !important;
+  display: block;
   object-fit: contain;
-  border-radius: 0.85rem;
 }
 
 .footer h3,
@@ -1210,7 +1257,6 @@ Ajustes para telas menores
   }
 }
 
-/* AJUSTAR A ANIMAÇÃO PARA QUEM PREFERE MENOS MOVIMENTO */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1236,21 +1282,6 @@ Ajustes para telas menores
   display: none;
 }
 
-.hero__actions .btn--whatsapp {
-  gap: 10px;
-  background-color: #061934;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.hero__actions .btn--whatsapp__icon {
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
-  object-fit: contain;
-  transform: scale(1.8);
-  transform-origin: center;
-}
 
 @media (min-width: 1024px) {
   .hero__grid {
@@ -1329,3 +1360,877 @@ Ajustes para telas menores
     align-self: start;
   }
 }
+
+/* Seção branca ao redor da caixa */
+.cta {
+  background: var(--branco);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+}
+
+/* Espaço nas laterais */
+.cta__container {
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+/* Caixa azul */
+.cta__box {
+  width: 100%;
+  max-width: 68rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: var(--raio);
+  background: linear-gradient(
+    135deg,
+    var(--azul-principal),
+    var(--azul-profundo)
+  );
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+/* Caixa aparece */
+.reveal--blue-box {
+  opacity: 0;
+  transform: none !important;
+  transition: opacity 0.5s ease !important;
+  transition-delay: 0s !important;
+}
+
+.reveal--blue-box.is-visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+html body main .cta {
+  background-color: #dedfe1 !important;
+  background-image: none !important;
+}
+
+html body main .cta > .container,
+html body main .cta .cta__container {
+  background-color: transparent !important;
+}
+
+html body main .cta .cta__box {
+  background: linear-gradient(
+    135deg,
+    var(--azul-principal),
+    var(--azul-profundo)
+  ) !important;
+}
+
+/* =========================
+   PÁGINAS LEGAIS
+========================= */
+
+.legal-page {
+  min-height: 100vh;
+  padding-top: calc(var(--header-altura, 5rem) + 4rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+  background: var(--fundo-site);
+}
+
+.legal-page__content {
+  width: min(100% - 2rem, 58rem);
+  margin-inline: auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--branco);
+  box-shadow: var(--sombra);
+}
+
+.legal-page__content h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-page__date {
+  margin-bottom: 2.5rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.legal-page__content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--azul-principal);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.legal-page__content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.legal-page__content ul {
+  margin: 0 0 1.5rem 1.25rem;
+}
+
+.legal-page__content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: var(--texto-suave, #5c6b7a) !important;
+  -webkit-text-fill-color: var(--texto-suave, #5c6b7a) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.legal-page__content li::marker {
+  color: var(--azul-principal, #1e3a5f) !important;
+}
+
+.legal-page__content a {
+  color: var(--azul-principal);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .legal-page {
+    padding-top: calc(var(--header-altura, 5rem) + 2rem);
+  }
+
+  .legal-page__content {
+    width: min(100% - 1.25rem, 58rem);
+    border-radius: 1rem;
+  }
+}
+
+.privacy-notice {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.privacy-notice a {
+  color: var(--azul-principal);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Cards da página Métodos */
+.method-step {
+  max-width: 760px;          /* deixa o bloco menor */
+  margin: 0 auto 1.5rem;     /* centraliza */
+  padding: 1.5rem 1.75rem;
+  background: #ffffff;       /* fundo branco */
+  border: 1px solid rgba(7, 31, 61, 0.12);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.75rem 2rem rgba(7, 31, 61, 0.06);
+}
+
+.method-step__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.method-step__number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #061934;
+  color: #f4b000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.method-step__header h3 {
+  margin: 0;
+  color: #061934;
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+.method-step p {
+  margin: 0;
+  color: #5c6b7a;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   CARDS DA PÁGINA MÉTODOS
+========================= */
+
+.method {
+  background: var(--fundo-site);
+}
+
+/* Deixa o conjunto menor e centralizado */
+.method__timeline {
+  width: min(100%, 44rem);
+  max-width: 44rem;
+  margin-inline: auto;
+  gap: 1.25rem;
+}
+
+/* Card individual */
+.method-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  row-gap: 0.35rem;
+  align-items: center;
+
+  padding: 1.25rem 1.4rem;
+
+  background: #ffffff;
+  border: 1px solid rgba(7, 31, 61, 0.12);
+  border-radius: 1.2rem;
+
+  box-shadow: 0 0.5rem 1.5rem rgba(7, 31, 61, 0.06);
+}
+
+/* Número */
+.method-card span {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  width: 3.1rem;
+  height: 3.1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+
+  border-radius: 50%;
+  background: var(--azul-principal);
+  color: var(--dourado);
+
+  font-weight: 800;
+}
+
+/* Título */
+.method-card h2 {
+  grid-column: 2;
+  grid-row: 1;
+
+  margin: 0;
+  color: var(--azul-principal);
+
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.25;
+}
+
+/* Descrição corretamente abaixo do título */
+.method-card p {
+  grid-column: 2;
+  grid-row: 2;
+
+  width: 100%;
+  margin: 0;
+
+  color: var(--texto-suave);
+  font-size: 1rem;
+  line-height: 1.6;
+
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* Linha vertical da sequência */
+.method__timeline::before {
+  left: 2.95rem;
+}
+
+/* Botão centralizado */
+.method__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 480px) {
+
+  /* -----------------------------------------
+     PÁGINA DE MÉTODOS E PÁGINAS INTERNAS
+  ----------------------------------------- */
+
+  .page-hero {
+    padding-top: calc(var(--header-altura) + 1.35rem);
+    padding-bottom: 1.15rem;
+  }
+
+  .page-hero + .method,
+  .page-hero + .contact {
+    padding-top: 1.15rem;
+  }
+
+  /* Evita que "MÉTODO DA CONSULTORIA" seja cortado */
+  .page-hero__content .eyebrow {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0.65rem;
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .page-hero__content h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 9vw, 2.15rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  .page-hero__content p {
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* -----------------------------------------
+     TELA INICIAL
+  ----------------------------------------- */
+
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-altura) + 1.25rem);
+    padding-bottom: 1.75rem;
+    align-items: flex-start;
+  }
+
+  .hero__grid {
+    gap: 1.25rem;
+  }
+
+  .hero__content h1 {
+    margin: 0;
+    font-size: clamp(2rem, 10vw, 2.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  .hero__content p {
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* Coloca os dois botões na mesma linha */
+  .hero__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .hero__actions .btn {
+    width: auto;
+    min-width: 0;
+    min-height: 2.9rem;
+    padding: 0.65rem 0.45rem;
+
+    font-size: 0.78rem;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* Imagem mais compacta para não alongar o início */
+  .hero__image-wrap {
+    margin-top: 0.25rem;
+  }
+
+  .hero__image {
+    width: 100%;
+    max-height: 13rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem;
+  }
+}
+
+/* BOTÕES DA SEÇÃO INICIAL SEMPRE DO MESMO TAMANHO */
+.hero__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 34rem;
+}
+
+.hero__actions .btn {
+  width: 100%;
+  min-width: 0;
+  height: 3.2rem;
+  min-height: 3.2rem;
+  padding: 0.65rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.72rem, 2.5vw, 0.9rem);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero__actions .btn--whatsapp {
+  position: static;
+  gap: 0.35rem;
+  transform: none;
+  background-color: #061934;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hero__actions .btn--whatsapp__icon {
+  position: static;
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  object-fit: contain;
+  transform: none;
+}
+
+.hero__actions .btn--whatsapp span {
+  width: auto;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+  transform: translateX(-5px);
+}
+
+/* Títulos principais em celulares */
+@media (max-width: 768px) {
+  .hero__content h1,
+  .page-hero__content h1,
+  .legal-page__content h1 {
+    font-size: clamp(1.75rem, 7.5vw, 2.35rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Ajuste para celulares pequenos */
+@media (max-width: 480px) {
+  .hero__content h1,
+  .page-hero__content h1,
+  .legal-page__content h1 {
+    font-size: clamp(1.65rem, 7.8vw, 2.05rem);
+    line-height: 1.12;
+  }
+}
+
+/* Ajusta os textos acima dos títulos no celular */
+@media (max-width: 768px) {
+  .eyebrow {
+    font-size: 0.66rem;
+    line-height: 1.35;
+    letter-spacing: 0.11em;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 0.6rem;
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+  }
+
+  /* Garante que o texto da página de métodos não seja cortado */
+  .page-hero__content .eyebrow {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-align: center;
+  }
+}
+
+/* ==================================================
+   VERSÃO COMPLETA PARA TABLETS E IPADS
+   Estrutura semelhante ao computador, em escala menor
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  :root {
+    --header-altura: 4.75rem;
+  }
+
+  .container {
+    width: min(calc(100% - 2.5rem), 70rem);
+  }
+
+  .section {
+    padding-block: 3rem;
+  }
+
+  /* Tela inicial: conteúdo compacto, sem ocupar 100vh */
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-altura) + 1rem);
+    padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero + .about {
+    padding-top: 2rem;
+  }
+
+  .hero__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(17rem, 0.92fr) !important;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3.25rem);
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 35rem;
+    min-width: 0;
+  }
+
+  .hero__content h1 {
+    margin: 0;
+    font-size: clamp(2.15rem, 4.5vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  .hero__content p {
+    max-width: 33rem;
+    margin-top: 0.85rem;
+    font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+    line-height: 1.5;
+  }
+
+  .hero__actions {
+    width: 100%;
+    max-width: 31rem;
+    gap: 0.65rem;
+    margin-top: 1.15rem;
+  }
+
+  .hero__actions .btn {
+    height: 3rem;
+    min-height: 3rem;
+    padding: 0.6rem 0.65rem;
+    font-size: clamp(0.7rem, 1.15vw, 0.84rem);
+  }
+
+  /* Imagem e fundo azul permanecem encaixados */
+  .hero__image-wrap {
+    position: relative;
+    isolation: isolate;
+    width: clamp(18rem, 31vw, 23rem);
+    max-width: 100%;
+    margin-inline: auto;
+    overflow: visible;
+  }
+
+  .hero__image-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0.7rem -0.7rem -0.7rem 0.7rem;
+    z-index: 0;
+    background: var(--azul-principal);
+    border-radius: 1.1rem;
+  }
+
+  .hero__image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 4.6;
+    object-fit: cover;
+    border-radius: 1.1rem;
+    box-shadow: var(--sombra);
+  }
+
+  /* Sobre a empresa e carrossel lado a lado */
+  .about .section-heading {
+    max-width: 54rem;
+    margin-bottom: 2rem;
+  }
+
+  .about__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1.1fr) !important;
+    align-items: start;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .about__text {
+    width: 100%;
+    min-width: 0;
+    gap: 0.85rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .about .carousel {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .carousel__viewport {
+    min-height: clamp(22rem, 42vw, 29rem);
+  }
+
+  .carousel__slide img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  .carousel__slide p {
+    padding: 1rem 1.1rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .carousel__controls {
+    padding: 0.75rem 1rem;
+  }
+
+  .carousel__button {
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: 1.55rem;
+  }
+
+  /* Serviços */
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .service-card {
+    min-height: 14rem;
+    padding: 1.3rem;
+  }
+
+  .service-card__icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* Chamada final */
+  .cta__box {
+    padding: clamp(2rem, 4vw, 3rem);
+  }
+
+  .cta__box h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  }
+
+  /* Métodos e contato */
+  .page-hero {
+    padding-top: calc(var(--header-altura) + 1.15rem);
+    padding-bottom: 0.85rem;
+  }
+
+  .page-hero__content h1 {
+    font-size: 2.05rem;
+  }
+
+  .page-hero__content p {
+    margin-top: 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .page-hero + .method,
+  .page-hero + .contact {
+    padding-top: 0.9rem;
+  }
+
+  .method__timeline {
+    width: min(100%, 44rem);
+    max-width: 44rem;
+  }
+
+  .contact__grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.95fr) !important;
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .contact__form-area,
+  .contact__info {
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .footer__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* =========================================
+   CARROSSEL ADAPTADO PARA CELULAR
+========================================= */
+
+@media (max-width: 768px) {
+
+  .carousel {
+    border-radius: 1.1rem;
+  }
+
+  /* Altura geral mais equilibrada */
+  .carousel__viewport {
+    min-height: 22rem;
+  }
+
+  /* Imagem do carrossel */
+  .carousel__slide img {
+    min-height: 15rem;
+    object-fit: cover;
+  }
+
+  /* Frases dentro do carrossel */
+  .carousel__slide p {
+    padding: 0.8rem 1rem;
+
+    font-size: clamp(0.82rem, 2.7vw, 0.92rem);
+    line-height: 1.45;
+    letter-spacing: normal;
+  }
+
+  /* Área onde ficam as setas e os indicadores */
+  .carousel__controls {
+    min-height: 2.9rem;
+    padding: 0.45rem 0.7rem;
+    gap: 0.6rem;
+  }
+
+  /* Setas menores */
+  .carousel__button {
+    width: 1.9rem;
+    height: 1.9rem;
+    flex: 0 0 1.9rem;
+
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  /* Bolinhas menores */
+  .carousel__dots {
+    gap: 0.35rem;
+  }
+
+  .carousel__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .carousel__dot.is-active {
+    width: 1.2rem;
+  }
+}
+
+/* =========================================
+   BOTÃO DO WHATSAPP
+========================================= */
+
+.hero__actions .btn--whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.35rem;
+  background: #061934;
+  color: #ffffff;
+}
+
+.hero__actions .btn--whatsapp__icon {
+  display: block;
+
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+
+  object-fit: contain;
+  transform: none;
+}
+
+.hero__actions .btn--whatsapp span {
+  width: auto;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  white-space: nowrap;
+
+  /* Mantém a configuração que estava boa no celular */
+  transform: translateX(-5px);
+}
+
+/* Tablet, notebook e computador */
+@media (min-width: 769px) {
+
+  .hero__actions .btn--whatsapp {
+    gap: 0.5rem;
+
+    /*
+      O espaçamento maior na direita desloca suavemente
+      imagem e texto para a esquerda, sem colocá-los na ponta.
+    */
+    padding-left: 1rem;
+    padding-right: 1.4rem;
+  }
+
+  /* A imagem fica maior nas telas grandes */
+  .hero__actions .btn--whatsapp__icon {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+
+  .hero__actions .btn--whatsapp span {
+    transform: none;
+  }
+}
+
