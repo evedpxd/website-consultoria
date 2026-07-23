@@ -1874,7 +1874,6 @@ html body main .cta .cta__box {
 
 /* ==================================================
    VERSÃO COMPLETA PARA TABLETS E IPADS
-   Estrutura semelhante ao computador, em escala menor
 ================================================== */
 
 @media (min-width: 768px) and (max-width: 1180px) {
@@ -1890,7 +1889,6 @@ html body main .cta .cta__box {
     padding-block: 3rem;
   }
 
-  /* Tela inicial: conteúdo compacto, sem ocupar 100vh */
   .hero {
     min-height: auto;
     padding-top: calc(var(--header-altura) + 1rem);
@@ -1944,7 +1942,6 @@ html body main .cta .cta__box {
     font-size: clamp(0.7rem, 1.15vw, 0.84rem);
   }
 
-  /* Imagem e fundo azul permanecem encaixados */
   .hero__image-wrap {
     position: relative;
     isolation: isolate;
@@ -2204,7 +2201,6 @@ html body main .cta .cta__box {
   line-height: 1;
   white-space: nowrap;
 
-  /* Mantém a configuração que estava boa no celular */
   transform: translateX(-5px);
 }
 
@@ -2213,16 +2209,9 @@ html body main .cta .cta__box {
 
   .hero__actions .btn--whatsapp {
     gap: 0.5rem;
-
-    /*
-      O espaçamento maior na direita desloca suavemente
-      imagem e texto para a esquerda, sem colocá-los na ponta.
-    */
     padding-left: 1rem;
     padding-right: 1.4rem;
   }
-
-  /* A imagem fica maior nas telas grandes */
   .hero__actions .btn--whatsapp__icon {
     width: 24px;
     height: 24px;
