@@ -1,5 +1,5 @@
 // NÚMERO DO WHATSAPP
-const whatsappNumber = "83999432113";
+const whatsappNumber = "5583999432113";
 
 // MENSAGEM PADRÃO DOS BOTÕES DE WHATSAPP
 const defaultWhatsappMessage = "Olá! Quero falar com um especialista sobre consultoria empresarial.";
